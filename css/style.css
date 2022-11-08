@@ -1,0 +1,1158 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;700&display=swap');
+
+  ::-webkit-scrollbar-track
+  {
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  	border-radius: 10px;
+  	background-color: rgba(0,0,0,.3);
+  }
+
+  ::-webkit-scrollbar
+  {
+  	width: 12px;
+  }
+
+  ::-webkit-scrollbar-thumb
+  {
+  	border-radius: 10px;
+  	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+
+    background-color: rgba(255,255,255,.3);
+  }
+
+  :root {
+    --mainColor: #fff;
+    --orangeColor: #FF7700;
+    --greenColor: #52FC60;
+    --redColor: #FF444B;
+    --textColor: #E4E4E4;
+  }
+  * {
+      margin: 0;
+      padding: 0;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      color: #212322;
+      outline: 0
+  }
+
+  body,
+  html {
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      height: auto;
+      scroll-behavior: smooth;
+  }
+
+  input {
+    font-size: 16px;
+  }
+
+  body {
+      -webkit-overflow-scrolling: touch;
+      background-color: var(--mainColor);
+      text-align: center;
+      vertical-align: top;
+      float: left;
+      height: 100vh;
+  }
+
+  .backgroundImage {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    animation: mymove 50s infinite;
+  }
+
+  .backgroundImage img {
+    float: left;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+
+  @keyframes mymove {
+    0% {
+      width: 100vw;
+      height: 100vh;
+    }
+    50% {
+      width: 150vw;
+      height: 150vh;
+    }
+    100% {
+        width: 100vw;
+        height: 100vh;
+    }
+  }
+  .main {
+    background-color: #fff;
+    position: relative;
+    z-index: 9;
+    display: inline-block;
+    max-width: 620px;
+    width: 100%;
+    position: relative;
+    vertical-align: top;
+    box-shadow: 0 0 90px -30px #000;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+
+  /* .main .landingPage {
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+
+  .main .landingPage svg {
+    float: left;
+    width: 100%;
+    margin-bottom: 60px;
+  } */
+
+  .page {
+    position: absolute;
+    padding: 40px 30px;
+    left: 0;
+    max-height: 100vh;
+    overflow-y: auto;
+    top: 0;
+    width: 100%;
+    transform: translateX(100vw);
+    opacity: 0;
+    transition: .5s ease;
+  }
+
+  .loginPage {
+    padding: 70px 100px
+  }
+  .page.active {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  .main .landingPage svg.logo {
+    float: left;
+    width: 100%;
+    height: 65px;
+  }
+  .main .landingPage svg.lineSvg {
+    float: left;
+    width: 100%;
+    height: 4px;
+    margin: 50px 0;
+  }
+  .main .landingPage svg.sponsorSvg {
+    float: left;
+    width: 100%;
+    height: 35px;
+  }
+
+  .main .landingPage .landingParagraph {
+    float: left;
+    width: 100%;
+    padding: 0 85px;
+    color: #BCC0C2;
+    margin: 80px 0;
+    text-align: center;
+  }
+
+  .nextBtn {
+    margin-left: calc(50% - 140px);
+    float: left;
+    width: 280px;
+    height: 70px;
+    line-height: 70px;
+    font-size: 24px;
+    position: relative;
+   color: #fff;
+    border-radius: 50px;
+    background: rgb(135,118,236);
+    background: linear-gradient(45deg, rgba(135,118,236,1) 0%, rgba(87,65,217,1) 100%);
+    margin-bottom: 30px;
+    cursor: pointer;
+  }
+
+  .labelText {
+    float: left;
+    width: 100%;
+    text-align: center;
+   color: #BCC0C2;
+  }
+
+  .loginPage .logo {
+    float: left;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 70px;
+  }
+  .loginPage .logo svg {
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  .loginPage p {
+    float: left;
+    width: 100%;
+   color: #BCC0C2;
+    height: auto;
+    margin-bottom: 30px;
+  }
+
+  .loginPage .loginForm {
+    float: left;
+    width: 100%;
+    height: auto;
+  }
+  .loginPage .loginForm input {
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 0 30px;
+    padding-left: 60px;
+    color: #000;
+    border: 0;
+    font-size: 16px;
+    border-radius: 50px;
+    background-color: rgba(255,255,255,.3);
+    border: 2px solid #5E48DC;
+  }
+
+  .loginPage .loginForm input::placeholder {
+    color: rgba(000,000,000,.4);
+  }
+
+  .formRow {
+    position: relative;
+    float: left;
+    width: 100%;
+    height: 70px;
+    margin-bottom: 20px;
+  }
+
+  .formRow svg {
+    float: left;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+  }
+
+  .rememberMeBtn {
+    float: left;
+    width: auto;
+    height: 20px;
+    cursor: pointer
+  }
+  .rememberMeBtn svg {
+    float: left;
+    width: 24px;
+    height: 24px;
+    padding: 5px;
+    margin-right: 5px;
+    border-radius: 100%;
+    background-color: rgba(255,255,255,.7);
+    fill: #5D47DB;
+    border: 2px solid #5D47DB;
+  }
+  .rememberMeBtn svg path {
+    fill: #5D47DB;
+  }
+
+  .rememberMeBtn span {
+    float: left;
+   color: #BCC0C2;
+    width: auto;
+    height: 20px;
+    line-height: 20px;
+  }
+
+  .forgotPasswordBtn {
+    float: right;
+    width: auto;
+   color: #BCC0C2;
+    line-height: 20px;
+    height: 20px;
+  }
+  .submitUpdateBtn,
+  .submitLoginBtn {
+    float: left;
+    width: 100%;
+    height: 70px;
+    color: #fff;
+    cursor: pointer;
+    background: rgb(94,72,220);
+    background: linear-gradient(108deg, rgba(94,72,220,1) 0%, rgba(47,36,110,1) 100%);
+    border-radius: 50px;
+    line-height: 70px;
+    text-transform: none;
+    text-align: center;
+    font-size: 24px;
+    box-shadow: 0 0 10px -6px #000;
+    border:none;
+    outline: none;
+  }
+
+  .homePage {
+    overflow-x: hidden;
+    padding: 0;
+  }
+  .headerWrapper {
+    float: left;
+    width: 100%;
+    position: relative;
+    height: 90px;
+    background-color: rgba(255,255,255,.3);
+  }
+  .headerWrapper .burgerBtn {
+    float: left;
+    width: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 90px;
+    cursor: pointer;
+    transition: .5s ease;
+  }
+  .showMenu .headerWrapper .burgerBtn {
+    transform: rotate(90deg);
+  }
+  .headerWrapper .burgerBtn svg {
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 0 21px;
+  }
+
+  .headerLogo {
+    float: left;
+    width: 100%;
+    height: 90px;
+    padding: 20px 0px;
+  }
+  .headerLogo svg {
+    float: left;
+    width: 100%;
+    height: 100%;
+  }
+
+  .notificationBar {
+    float: left;
+    width: 100%;
+    height: 70px;
+    background: rgb(252,162,27);
+    background: linear-gradient(320deg, rgba(252,162,27,1) 0%, rgba(255,116,44,1) 100%);
+    padding: 10px 30px;
+  }
+  .notificationBar p {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+   color: #fff;
+  }
+
+  .homePageContent {
+    float: left;
+    width: 100%;
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+    padding: 30px 40px;
+  }
+
+  .availableBalance {
+    float: left;
+    width: 100%;
+    background-color: rgba(255,255,255,.3);
+    border-radius: 5px;
+    padding: 15px 20px;
+    margin-bottom: 30px;
+  }
+
+  .availableBalance .svgIcon {
+    float: left;
+    width: 40px;
+    height: 40px;
+    margin: 10px 0;
+    display: none;
+  }
+
+  .helperLineSvg {
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .availableBalance .descBox {
+    float: left;
+    width: calc(100% - 40px);
+    height: auto;
+    padding-left: 10px;
+  }
+
+  .descChart {
+    float: left;
+    width: 100px;
+    height: 100px;
+    position: relative;
+  }
+  .availableBalance .descBox span:first-child {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #BCC0C2;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+  }
+  .availableBalance .descBox span:nth-child(2) {
+    float: left;
+    width: 100%;
+    text-align: left;
+    height: 45px;
+    line-height: 45px;
+   color: #383838;
+    font-weight: 500;
+    font-size: 38px;
+  }
+
+  .availableBalance .descBox span:last-child {
+    float: left;
+    width: 100%;
+    font-size: 14px;
+    color: #BCC0C2;
+    height: 25px;
+    line-height: 25px;
+    text-align: left;
+  }
+
+  .availableBalance .descBox span:last-child {}
+  .availableBalance .descBox span sub {
+    transform: translateY(-10px);
+    display: inline-block;
+    font-size: 14px;
+    color: #383838;
+  }
+
+
+
+    .descChart svg {
+      float: left;
+      width: 100%;
+      position: relative;
+      height: 100%;
+    }
+
+    .circle_animation {
+      stroke-dasharray: 305; /* this value is the pixel circumference of the circle */
+      stroke-dashoffset: 355;
+    }
+
+    .circle_animation {
+        -webkit-animation: css 1s ease-out forwards;
+        animation: css 1s ease-out forwards;
+    }
+
+    @-webkit-keyframes html {
+      to {
+        stroke-dashoffset: 80; /* 50% would be 220 (half the initial value specified above) */
+      }
+    }
+
+    @keyframes html {
+      to {
+        stroke-dashoffset: 80;
+      }
+    }
+
+    @-webkit-keyframes css {
+      to {
+        stroke-dashoffset: 160;
+      }
+    }
+
+    @keyframes css {
+      to {
+        stroke-dashoffset: 160;
+      }
+    }
+
+    .historyBox {
+      float: left;
+      width: 100%;
+      background-color: rgba(255,255,255,.3);
+      border-radius: 5px;
+      padding: 15px 20px;
+      margin-bottom: 30px;
+      text-align: left;
+    }
+    .historyBox .svgIcon {
+      float: left;
+      height: 80px;
+      width: 50px;
+    }
+    .historyBox .svgIcon svg {
+      float: left;
+      width: 100%;
+      height: 100%;
+    }
+
+    .historyBox .descBox {
+      float: left;
+      padding-left: 15px;
+      width: calc(100% - 50px);
+      height: auto;
+    }
+    .historyBox .descBox span {
+      float: left;
+      width: 100%;
+      font-size: 14px;
+     color: #000;
+    }
+    .descInformation {
+      float: left;
+      width: calc(100% - 100px);
+    }
+    .historyBox .descBox span:nth-child(2) {
+      margin-bottom: 10px;
+    }
+    .historyBox .descBox span:nth-child(3) {
+      margin: 4px 0;
+    }
+
+    .historyBox .descBox .type,
+    .historyBox .descBox .number {
+      float: left;
+      font-size: 30px;
+      font-weight: 500;
+      width: auto;
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      top: 40%;
+    }
+
+    .historyBox .descBox .type {
+      font-size: 14px;
+      top: 60%;
+    }
+
+    .transactionTable {
+      float: left;
+      width: 100%;
+      height: auto;
+      background-color: rgba(255,255,255,.3);
+      border-radius: 5px;
+    }
+    .transactionTable .transactionNav {
+      float: left;
+      width: 30%;
+      margin-top: 15px;
+      margin-bottom: 15px;
+      text-align: center;
+      border: 2px solid rgb(94,72,220);
+      border-radius: 40px;
+      overflow: hidden;
+    }
+    .transactionTable .transactionNav .transactionBtn {
+      float: left;
+      padding: 10px 11px;
+      border-radius: 5px;
+      cursor: pointer;
+      color: #383838;
+      font-size: 14px;
+      width: 100%;
+      border-radius: 40px;
+    }
+    .transactionTable .transactionNav .transactionBtn.active {
+      background: rgb(94,72,220);
+      background: linear-gradient(108deg, rgba(94,72,220,1) 0%, rgba(47,36,110,1) 100%);
+      color: #fff;
+    }
+    .transactionTable .transactionHeaderTable,
+    .transactionTable .transactionContentTable {
+      float: left;
+      width: 100%;
+      height: auto;
+    }
+    .transactionTable .transactionContentTable {
+      margin-bottom: 20px;
+    }
+    .transactionTable .rowTransaction:nth-child(odd) {
+      background-color: #F4F7F8;
+      border-radius: 50px;
+    }
+    .transactionTable .transactionHeaderTable .rowTransaction {
+      background-color: transparent;
+    }
+    .transactionTable .rowTransaction {
+      float: left;
+      width: 100%;
+      height: auto;
+    }
+    .transactionTable .rowTransaction span {
+      float: left;
+      width: calc(100% / 6);
+      font-size: 14px;
+      color: #000;
+      overflow: hidden;
+      white-space: nowrap;
+      height: auto;
+      padding: 15px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 25px;
+    }
+
+    .transactionTable .rowTransaction span svg {
+      float: left;
+      width: 100%;
+      height: 100%;
+      padding: 5px;
+      max-width: 30px;
+      max-height: 25px;
+      margin-left: calc(50% - 15px);
+    }
+
+    .mainMenu {
+      float: left;
+      width: 100%;
+      background-color: var(--mainColor);
+      height: calc(100% - 160px);
+      position: absolute;
+      overflow-y: auto;
+      left: 0;
+      bottom: 0;
+      transform: translateX(100vw);
+      transition: .5s ease;
+      z-index: 99;
+      padding: 30px 50px;
+    }
+    .showMenu .mainMenu {
+      transform: translateX(0);
+    }
+
+    .menuItem {
+      cursor: pointer;
+      float: left;
+      width: 100%;
+      position: relative;
+      border-bottom: 2px solid rgba(255,255,255,.1);
+    }
+
+    .menuItem:last-child {
+      border-bottom: 0;
+    }
+
+    .menuItem svg {
+      float: left;
+      width: 60px;
+      height: 60px;
+      margin: 20px 0;
+    }
+    .menuItem svg path {
+      fill: #383838;
+    }
+
+    .menuItem .labelItemMenu {
+      float: left;
+      width: calc(100% - 60px);
+      padding-left: 20px;
+      position: relative;
+    }
+
+
+    .menuItem .labelItemMenu:first-child span:first-child {
+      float: left;
+      width: 100%;
+      font-size: 24px;
+    }
+    .menuItem:first-child .labelItemMenu span:last-child {
+      font-size: 12px;
+      position: absolute;
+      left: 0;
+      height: auto;
+      line-height: normal;
+      margin: 0;
+      padding: 0;
+      left: 45px;
+      bottom: 15px;
+      width: auto;
+    }
+
+    .menuItem .labelItemMenu span {
+      float: left;
+      width: 100%;
+     color: #383838;
+      padding-left: 20px;
+      line-height: 60px;
+      text-align: left;
+      font-size: 21px;
+      margin: 20px 0;
+    }
+
+
+    .menuItem:first-child .labelItemMenu span:first-child {
+      margin-top: 20px;
+      line-height: 35px;
+      height: 60px;
+      font-size: 32px;
+    }
+    .settingsPage,
+    .transactionPage,
+    .withdrawPage,
+    .depositPage  {
+      padding: 0;
+      float: left;
+      width: 100%;
+      height: 100%;
+    }
+
+    .pageHeader {
+      float: left;
+      width: 100%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+      padding: 0 50px;
+      font-size: 16px;
+      color: #BCC0C2;
+    }
+
+    .pageHeader span {
+      color: #BCC0C2;
+     float: left;
+     width: 110px;
+     height: auto;
+     font-size: 20px;
+     line-height: 20px;
+     text-align: left;
+    }
+    .pageHeader svg {
+      float: right;
+      width: calc(100% - 155px);
+      height: 2px;
+      margin: 9px 0;
+      margin-left: 20px;
+      background-color: #BCC0C2;
+    }
+    .pageHeader svg line {
+      fill: #383838;
+      display: none;
+    }
+
+    .settingsPage .pageContentBg,
+    .transactionPage .pageContentBg,
+    .withdrawPage .pageContentBg,
+    .depositPage .pageContentBg {
+      float: left;
+      padding: 15px;
+      width: calc(100% - 80px);
+      margin: 36px 40px;
+      text-align: left;
+      position: relative;
+      border-radius: 5px;
+      overflow: hidden;
+      background-color: rgba(255,255,255,.3);
+    }
+    .transactionPage  .pageContentBg {
+      background: transparent;
+      width: calc(100% - 40px);
+      margin: 20px 20px;
+    }
+    .transactionTable {
+      text-align: center;
+    }
+
+    .settingsPage .pageContentBg span:first-child,
+    .withdrawPage .pageContentBg span:first-child,
+    .depositPage .pageContentBg span:first-child {
+      float: left;
+      width: 100%;
+      font-size: 36px;
+     color: #383838;
+    }
+    .withdrawPage .pageContentBg span:nth-child(2),
+    .depositPage .pageContentBg span:nth-child(2) {
+      float: left;
+      width: 100%;
+      font-size: 18px;
+     color: #BCC0C2;
+    color: #383838;
+    }
+
+    .settingsPage .pageContentBg span:nth-child(2) {
+      float: left;
+      width: 100%;
+      font-size: 14px;
+      margin-bottom: 30px;
+     color: #BCC0C2;
+    }
+
+    .withdrawPage .pageContentBg svg.barcode,
+    .depositPage .pageContentBg svg.barcode {
+      float: left;
+      width: 240px;
+      margin: 20px 0;
+      height: 240px;
+      margin-left: calc(50% - 120px);
+      padding: 10px 0;
+      background-color: #fff;
+    }
+
+    .settingsPage .inputRow {
+      float: left;
+      width: 100%;
+      position: relative;
+      height: auto;
+      border-radius: 5px;
+      margin-bottom: 15px;
+    }
+    .withdrawPage .inputRow,
+    .depositPage .inputRow {
+      float: left;
+      width: 100%;
+      position: relative;
+      height: auto;
+    }
+    .settingsPage .inputRow span {
+    }
+    .settingsPage .inputRow span:first-child {
+      float: left;
+      width: 100%;
+      line-height: normal;
+      height: auto;
+      font-size: 16px;
+       padding-left: 40px;
+       color: #BCC0C2;
+    }
+
+    .settingsPage .inputRow span:first-child::before {
+      float: left;
+      height: 70%;
+      position: absolute;
+      right: 0;
+      background-color: #fff;
+      width: 1px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .settingsPage .inputRow input:last-child {
+      width: 100%;
+      height: 70px;
+      line-height: 70px;
+      border: 0;
+      color: #383838;
+      background-color: #F4F7F8;
+      font-size: 16px;
+      font-weight: 400;
+      margin-bottom: 0;
+      padding: 0 40px;
+      border-radius: 40px;
+
+    }
+    .withdrawPage .inputRow input,
+    .depositPage .inputRow input {
+        float: left;
+        width: 100%;
+        border-radius: 5px;
+        background-color: #F4F7F8;
+        padding: 0 30px;
+        border: 0;
+        height: 70px;
+        color: #000;
+        border-radius: 50px;
+        padding-right: 65px;
+        margin-bottom: 25px;
+    }
+    .withdrawPage .inputRow input::placeholder,
+    .depositPage .inputRow input::placeholder {
+      color: #BCC0C2;
+    }
+
+    .withdrawPage .inputRow .copy,
+    .depositPage .inputRow .copy {
+      float: left;
+      width: 70px;
+      height: 70px;
+      background-color: rgba(0,0,0,.1);
+      font-size: 9px;
+      text-align: center;
+     color: #383838;
+      position: absolute;
+      line-height: 70px;
+      right: 0;
+      top: 0;
+      border-top-right-radius: 40px;
+      border-bottom-right-radius: 40px;
+      cursor: pointer;
+    }
+
+    .pageInside {
+      float: left;
+      width: 100%;
+      height: calc(100vh - 160px);
+      overflow-y: auto;
+      position: relative;
+    }
+    a {
+      cursor: pointer
+    }
+    .submitPageBtn {
+      float: left;
+      width: 100%;
+      height: 70px;
+      line-height: 70px;
+      text-align: center;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 21px;
+      text-transform: uppercase;
+      border-radius: 40px;
+      background: rgb(94,72,220);
+      background: linear-gradient(
+      108deg, rgba(94,72,220,1) 0%, rgba(47,36,110,1) 100%);
+    }
+
+    .pageContentHelper {
+      float: left;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 9;
+      background-color: #fff;
+      transition: .3s ease;
+      transform: translateY(100%);
+    }
+
+   .pageContentHelper.showMessage {
+     transform: translateY(0);
+   }
+
+    .pageContentHelper .pagePositionHelper {
+      float: left;
+      width: 100%;
+      height: auto;
+      padding: 0 60px;
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: .3s ease;
+      text-align: center;
+    }
+    .pageContentHelper .pagePositionHelper svg:first-child {
+        margin-bottom: 50px;
+    }
+    .pageContentHelper .pagePositionHelper .thatSvg {
+        position: absolute;
+        left: 50%;
+        top: 32px;
+        transform: translateX(-50%);
+    }
+    .pageContentHelper .pagePositionHelper .thisSvg {
+      float: left;
+      width: 120px;
+      height: 120px;
+      border: 1px solid #52FC60;
+      border-radius: 100%;
+      padding: 10px;
+      margin-left: calc(50% - 60px);
+      margin-bottom: 30px;
+    }
+    .pageContentHelper .pagePositionHelper span {
+      float: left;
+      width: 100%;
+     color: #383838;
+      text-align: center;
+      font-size: 18px;
+      max-width: 240px;
+      margin-left: calc(50% - 120px);
+    }
+    .depositPage .pageContentHelper .pagePositionHelper span.price {
+
+      height: 70px;
+      border-radius: 40px;
+      background-color: #F4F7F8;
+    }
+    .withdrawPage .pageContentHelper .pagePositionHelper span.price {
+      height: 70px;
+      border-radius: 40px;
+      background-color: #F4F7F8;
+    }
+    .pageContentHelper .pagePositionHelper span.price {
+      background-color: #52FC60;
+      color: #383838;
+      width: 240px;
+      height: 70px;
+      font-size: 32px;
+      line-height: 70px;
+      border-radius: 40px;
+      margin-left: calc(50% - 120px);
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .withdrawPage .pageContentBg span:first-child {
+      font-size: 28px;
+      margin-top: 10px;
+      margin-bottom: 40px;
+      color: #383838;
+    }
+
+    .grColor {
+      color: #7BC20E !important;
+    }
+    .puColor {
+      color: #5D47DB !important;
+    }
+
+    .pageContentBg{
+      margin: auto;
+    }
+
+    .pageContentBg > h4{
+      margin-bottom: 2rem;
+    }
+
+    .pageContentBg > .barcode{
+      width: 250px;
+      height: 250px;
+    }
+
+    .amountInp, .walletInp{
+      width: 60%;
+      background-color: #e2e2e2;
+      padding: 0 30px;
+      border: 0;
+      height: 70px;
+      color: #000;
+      border-radius: 50px;
+      margin: 10px 0px 25px 0px;
+    }
+
+    .walletInp{
+      width: 60%;
+    }
+
+    .walletPart{
+      position: relative;
+    }
+
+    .walletPart > .copyBtn{
+      position: absolute;
+      top: 29%;
+      left: 76%;
+    }
+
+    .countinouBtn{
+      margin-left: 6000px;
+      outline: none;
+      border: none;
+      width: 60%;
+      margin: auto;
+      cursor: pointer;
+    }
+
+    .statusDeposit{
+      margin-top: 250px;
+    }
+
+    #btn{
+      margin-left: 20%;
+    }
+
+    @media only screen and (max-width: 500px) {
+      .main .landingPage .landingParagraph {
+        padding: 0;
+        margin-top: 0;
+      }
+      .loginPage{
+        padding: 15px 30px;
+      }
+      .homePageContent {
+        padding: 0;
+      }
+      .transactionTable {
+        padding: 0 10px;
+      }
+      .historyBox .descBox span,
+      .transactionTable .transactionNav .transactionBtn {
+        font-size: 11px;
+      }
+      .historyBox .svgIcon {
+        width: 40px;
+      }
+      .historyBox .descBox {
+        width: calc(100% - 40px);
+      }
+      .descInformation {
+        width: calc(100% - 70px);
+      }
+      .descChart {
+        width: 70px;
+        height: 70px;
+      }
+      .historyBox .descBox .type{
+        transform: translate(-50%, -3px);
+        font-size: 13px;
+      }
+      .mainMenu {
+        padding: 15px 30px;
+      }
+      .menuItem svg {
+        width: 40px;
+        height: 40px;
+      }
+      .menuItem .labelItemMenu {
+        width: calc(100% - 40px);
+      }
+      .menuItem:first-child .labelItemMenu span:first-child {
+        font-size: 28px;
+      }
+      .menuItem .labelItemMenu span {
+        margin: 10px 0;
+        font-size: 18px;
+      }
+      .settingsPage .pageContentBg, .transactionPage .pageContentBg, .withdrawPage .pageContentBg, .depositPage .pageContentBg {
+        width: calc(100% - 30px);
+        margin: 0 15px;
+      }
+      .pageHeader {
+        padding: 0 30px;
+      }
+
+      .transactionPage .pageContentBg {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .transactionPage .transactionTable {
+        padding: 0;
+      }
+      .settingsPage .pageContentBg {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+      }
+      .settingsPage .pageContentBg span:first-child, .withdrawPage .pageContentBg span:first-child, .depositPage .pageContentBg span:first-child {
+        font-size: 28px;
+      }
+      .settingsPage .inputRow span:first-child {
+        font-size: 13px;
+      }
+
+    }
