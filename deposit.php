@@ -47,10 +47,9 @@ if (!isset($_SESSION['username'])) {
 } else {
 ?>
 
-<?php
+    <?php
     include('server_deposit.php');
     ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -228,7 +227,7 @@ if (!isset($_SESSION['username'])) {
                     </div>
 
                     <div class="inputRow">
-                        <button type="submit" id="btn" name="submit2" value="Submit"
+                        <button type="submit2" id="btn" name="submit2" value="Submit"
                             class="countinouBtn submitPageBtn submitDepositBtn">Deposit</button>
                     </div>
 
