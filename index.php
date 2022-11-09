@@ -320,6 +320,14 @@
         </div>
        
     </div>
+
+    <div class="footer">
+      <img src="./img/logo.png" />
+
+      <div>
+        <h1>© Vesa Susuri</h1>
+      </div>
+    </div>
     <script src="app.js"></script>
   </body>
 </html>
