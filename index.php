@@ -13,11 +13,11 @@
         <img src="./img/logo.png" />
         <ul>
           <li><a href="">Home</a></li>
-          <li><a href="">Pages</a></li>
-          <li><a href="">Services</a></li>
-          <li><a href="">Road map</a></li>
-          <li><a href="">News</a></li>
-          <li><a href="">Contact</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#token">Token</a></li>
+          <li><a href="#convertor">Convertor</a></li>
+          <li><a href="#roadmap">Road map</a></li>
+          <li><a href="#news">News</a></li>
         </ul>
 
         <a href="login.php"><button>Log In</button></a>
@@ -29,9 +29,9 @@
             Digital Currency <br />Here.
           </h1>
           <p>
-            Cryotis it is Cryptocurrency ICO. Do not miss it! Shankle united
+            Cryotis it is Cryptocurrency ICO. Do not miss it! 
             <br />
-            state short lain, oicanha swine kielbasa
+             Buy and sell cryptocurrencies with 20+ fiat currencies using bank transfers or your credit/debit card.
           </p>
           <button>Log In</button>
         </div>
@@ -41,15 +41,10 @@
       </section>
     </header>
 
-    <aside>
+    <aside id='token'>
       <h1>What Is ICO Cryotis?</h1>
       <p>
-        Cryotis it is Cryptocurrency ICO. Do not miss it! Shankle united state
-        short loin, picanha swine kielbasa <br />
-        Cryotis it is Cryptocurrency ICO. Do not miss it! Shankle united state
-        short loin, picanha swine kielbasa <br />
-        Cryotis it is Cryptocurrency ICO. Do not miss it! Shankle united state
-        short loin, picanha swine kielbasa
+         At ICO Cryotis, we believe that everyone should have  the freedom to earn, hold, spend, <br>share and give their money - no matter who you are or where you come from.
       </p>
       <img src="img/grow line.png" />
       <div class="time">
@@ -65,14 +60,14 @@
       <div class="app_contect_bx">
         <h1>Awesome App Which Works For Your Business</h1>
         <p>
-          Cryotis it is Cryptocurrency ICO. Do not miss it! Shankle united state
-          short loin, picanha swine kielbasa
+        Trade on the go. Anywhere, anytime.
+        <br/>Download the ICO Cryotis
         </p>
-        <img src="img/All Store.png" alt="" />
+        <img src="img/allstore.png" alt="" style="width:300px;height:100px"/>
       </div>
     </div>
 
-    <div class="converter">
+    <div class="converter" id="convertor">
       <img src="./img/crypto bg.jpg" class="pic" />
       <h1 class="crypto-con">Crypto Convertor</h1>
 
@@ -134,13 +129,12 @@
       </div>
     </div>
 
-    <div class="rocket">
+    <div class="rocket" id="services">
       <img src="./img/rocket_bg.png" class="pic" />
       <div class="rocket_content">
         <h1>Cryotis Perfect Services That Works For You!</h1>
         <p>
-          Cryotis Perfect Services That Works For You!Cryotis Perfect Services
-          That Works For You!
+          Cryotis Perfect Services That Works For You!
         </p>
         <ul>
           <li>Mobile App:</li>
@@ -158,12 +152,11 @@
       </div>
     </div>
 
-    <div class="road_map">
+    <div class="road_map" id="roadmap">
       <img src="./img/rocket_bg.png" class="pic1" />
       <h1>Crypto Road Map</h1>
       <p>
-        Cryotis Perfect Services That Works For You!Cryotis Perfect Services
-        That Works For You!
+        Cryotis Road Map!
       </p>
       <div class="map">
         <div class="card">
@@ -225,8 +218,8 @@
       <div class="man_content">
         <h1>Review From Our Clients About Cryotis ICO</h1>
         <p>
-          Review From Our Clients About Cryotis ICOReview From Our Clients About
-          Cryotis ICOReview From Our Clients About Cryotis ICO
+           Cryotis ICO helped me so much understanding the world of Crypto Currencye's. <br>
+           So for me is a 10/10 website it helped me learn so much plus earn so much money!
         </p>
         <div class="client_cole">
           <div class="cont">
@@ -293,26 +286,26 @@
     </div>
 
 
-    <div class="news">
+    <div class="news" id="news">
         <h1>Crypto Latest News</h1>
         <div class="cards">
             <div class="card">
                 <h6>BITCOIN</h6>
                 <h2>Crypto Really <br> Wants a Bitcoin ETF</h2>
-                <p>Review From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICO</p>
+                <p>Bitcoin is a newcomer to the world of exchange-traded funds (ETFs). Bitcoin ETFs allow investors to get exposure to the enticing potential of BTC without having to safely store it</p>
                 <h5>AUG, 23 2022</h5>
             </div>
             <div class="card">
                 <h6>CRYPTO</h6>
                 <h2>Crypto Stock Exchange <br> Operator Pleads</h2>
-                <p>Review From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICO</p>
-                <h5>AUG, 23 2022</h5>
+                <p>The man behind two now-defunct cryptocurrency investment sites has pled guilty to securities fraud and obstruction of justice charges. </p>
+                <h5>APR, 03 2022</h5>
             </div>
             <div class="card">
                 <h6>BLOCKCHAIN</h6>
                 <h2>Don't Let the Crypto <br> Circus Fool You</h2>
-                <p>Review From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICOReview From Our Clients About Cryotis ICO</p>
-                <h5>AUG, 23 2022</h5>
+                <p>Blockchain.com is a cryptocurrency financial services company. The company began as the first Bitcoin blockchain explorer in 2011 and later created a cryptocurrency wallet</p>
+                <h5>JUL, 15 2022</h5>
             </div>
         </div>
         <div class="btn">
@@ -325,7 +318,7 @@
       <img src="./img/logo.png" />
 
       <div>
-        <h1>© Vesa Susuri</h1>
+        <h1 class="h1">© Vesa Susuri 2022 / Cryotis ICO</h1>
       </div>
     </div>
     <script src="app.js"></script>

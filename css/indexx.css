@@ -1075,8 +1075,8 @@ aside p{
 }
 
 
-.footer h1{
+.h1{
   color: var(--color-1);
-  font-size: 20px;
+  font-size: 17px;
   padding: 10px;
 }
