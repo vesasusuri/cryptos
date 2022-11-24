@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 09, 2022 at 09:58 PM
+-- Generation Time: Nov 24, 2022 at 07:13 PM
 -- Server version: 10.4.25-MariaDB
--- PHP Version: 8.1.10
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -52,7 +52,7 @@ CREATE TABLE `deposit` (
   `btcWallet` varchar(255) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
   `date` date DEFAULT current_timestamp(),
-  `status` varchar(255) DEFAULT NULL
+  `status` varchar(255) DEFAULT 'Decline'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -62,7 +62,12 @@ CREATE TABLE `deposit` (
 INSERT INTO `deposit` (`id`, `amount`, `btcWallet`, `username`, `date`, `status`) VALUES
 (1, '123123', '23', 'vesas@gmail.com', '2022-11-07', 'decline'),
 (2, '123123', '23', 'vesas@gmail.com', '2022-11-07', 'Accept'),
-(3, '123123', '111', 'vesas@gmail.com', '2022-11-07', 'Decline');
+(3, '123123', '111', 'vesas@gmail.com', '2022-11-07', 'Decline'),
+(5, '243', '222', 'vesas@gmail.com', '2022-11-22', 'Decline'),
+(6, '111', '111', 'vesas@gmail.com', '2022-11-22', 'Accept'),
+(7, '243', '5155', 'vesas@gmail.com', '2022-11-23', 'Decline'),
+(12, '243', '3434342', 'vesas@gmail.com', '2022-11-24', 'Accept'),
+(13, '111', '233434', 'resas@gmail.com', '2022-11-24', 'Accept');
 
 -- --------------------------------------------------------
 
@@ -85,7 +90,8 @@ CREATE TABLE `regjistrimi` (
 --
 
 INSERT INTO `regjistrimi` (`id`, `emri`, `mbiemri`, `email`, `username`, `passwordi`, `hash`) VALUES
-(2, 'vesa', 'susuri', 'vesas@gmail.com', 'vesasusurii', '1234', 'rgergergtertre');
+(2, 'vesa', 'susuri', 'vesas@gmail.com', 'vesasusuri', '12345', 'rgergergtertre'),
+(3, 'resa', 'susuri', 'resas@gmail.com', 'ressasusurii', '1234', 'drter');
 
 -- --------------------------------------------------------
 
@@ -107,7 +113,7 @@ CREATE TABLE `section2` (
 --
 
 INSERT INTO `section2` (`id`, `username`, `totalFee`, `latesDeposit`, `endDate`, `date`) VALUES
-(1, 'vesas@gmail.com', '33333', '0000-00-00', '2022-11-17', '2022-11-11');
+(1, 'vesas@gmail.com', '333330', '0000-00-00', '2022-11-17', '2022-11-11');
 
 -- --------------------------------------------------------
 
@@ -119,8 +125,18 @@ CREATE TABLE `withdraw` (
   `id` int(255) NOT NULL,
   `bwallet` varchar(255) DEFAULT NULL,
   `btcAddress` varchar(255) DEFAULT NULL,
-  `amount` varchar(255) DEFAULT NULL
+  `amount` varchar(255) DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `status` varchar(255) DEFAULT 'pending'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `withdraw`
+--
+
+INSERT INTO `withdraw` (`id`, `bwallet`, `btcAddress`, `amount`, `username`, `status`) VALUES
+(3, '343r', '34543', '345345', 'vesas@gmail.com', 'Accept'),
+(4, '453', '34534', '3453', 'vesas@gmail.com', 'pending');
 
 --
 -- Indexes for dumped tables
@@ -170,13 +186,13 @@ ALTER TABLE `admini`
 -- AUTO_INCREMENT for table `deposit`
 --
 ALTER TABLE `deposit`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `regjistrimi`
 --
 ALTER TABLE `regjistrimi`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `section2`
@@ -188,7 +204,7 @@ ALTER TABLE `section2`
 -- AUTO_INCREMENT for table `withdraw`
 --
 ALTER TABLE `withdraw`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

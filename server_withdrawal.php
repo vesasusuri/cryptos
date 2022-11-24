@@ -1,7 +1,7 @@
 <?php 
  session_start();
   $name = $_SESSION['username'];
-  $btcAddres = '';
+  $btcAddress = '';
   $bwallet = '';
   $amount = '';
 
@@ -13,42 +13,42 @@
   if(isset($_POST['submit']))
   {
     $bwallet=mysqli_real_escape_string($conn,$_POST['bwallet']);
-    $btcAddres=mysqli_real_escape_string($conn,$_POST['btcAddres']);
+    $btcAddress=mysqli_real_escape_string($conn,$_POST['btcAddress']);
     $amount=mysqli_real_escape_string($conn,$_POST['amount']);
 
     if (empty($bwallet)){
         array_push($errors, "Bitcoin Wallet is required"); 
     }
-    else if (!preg_match("/^[0-9]*$/",$bwallet)){
-        array_push($errors, "Only numbers allowed");
+    else if (!preg_match("/^[a-zA-ZëË0-9]*$/",$bwallet)){
+        array_push($errors, "Only letters and numbers are allowed");
     }
-    if (empty($btcAddres)){
+    if (empty($btcAddress)){
         array_push($errors, "BTC Address is required"); 
     }
-    else if (!preg_match("/^[a-zA-ZëË0-9]*$/",$btcAddres)){
-        array_push($errors, "Only letter and numbers are allowed");
+    else if (!preg_match("/^[a-zA-ZëË0-9]*$/",$btcAddress)){
+        array_push($errors, "Only letters and numbers are allowed");
     }
 
     if (empty($amount)){
         array_push($errors, "Only Numbers are allowed"); 
     }
-    else if (!preg_match("/^[0-9]*$/",$amount)){
-        array_push($errors, "Only letter and numbers are allowed");
+    else if (!preg_match("/^[a-zA-ZëË0-9]*$/",$amount)){
+        array_push($errors, "Only letters and numbers are allowed");
     }
 
 
      if (count($errors) == 0) 
      {
-        $regist ="INSERT INTO withdraw (bwallet,btcAddres,amount,username)
+        $regist ="INSERT INTO withdraw (bwallet,btcAddress,amount,username)
         VALUES ('$bwallet','$btcAddres','$amount','$name')";
 
-        $rows = "SELECT * FROM withdraw WHERE bwallet='$bwallet' AND btcAddres='$btcAddres' AND amount='$amount' ";	
+        $rows = "SELECT * FROM withdraw WHERE bwallet='$bwallet' AND btcAddress='$btcAddress' AND amount='$amount' ";	
 	    $run = mysqli_query($conn, $rows);
 
         if(mysqli_num_rows($run)<100){
             mysqli_query($conn,$regist);
             echo '<script>alert("Withdrawal is sent successfully")</script>';
-            echo "<script>window.open('withdrawal.php')</script>"; 
+            echo "<script>window.open('withdrawal.php' , '_SELF')</script>"; 
        }
      }
   }

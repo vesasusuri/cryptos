@@ -123,7 +123,7 @@ if (!isset($_SESSION['username'])) {
                         </g>
                     </svg>
                     <div class="labelItemMenu">
-                        <span>Transactions</span>
+                        <span>Withdraw Requests</span>
                     </div>
                 </a>
                 <a href="./logoutUser.php" class="menuItem" page="login">

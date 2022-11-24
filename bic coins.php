@@ -98,7 +98,7 @@ if (!isset($_SESSION['username'])) {
                     </g>
                 </svg>
                 <div class="labelItemMenu">
-                    <span>Transactions</span>
+                    <span>Withdraw Requests</span>
                 </div>
             </a>
 
@@ -258,38 +258,39 @@ if (!isset($_SESSION['username'])) {
                             <span class="grColor">Recover $369966</span>
                                 
                             <span class="puColor">
-                                Total Fee
-                                <?php
-                                    $con = mysqli_connect("localhost", "root", "", "crypto");
-                                    mysqli_select_db($con, "crypto");
+                                Total Fee 
+                                343
+                                <!-- <?php
+                                    // $con = mysqli_connect("localhost", "root", "", "crypto");
+                                    // mysqli_select_db($con, "crypto");
 
-                                    $select_produktet = "SELECT totalfee FROM section2 WHERE username = '" . $_SESSION['username'] . "'";
-                                    $run_produktet = mysqli_query($con, $select_produktet);
+                                    // $select_produktet = "SELECT totalfee FROM section2 WHERE username = '" . $_SESSION['username'] . "'";
+                                    // $run_produktet = mysqli_query($con, $select_produktet);
 
-                                    while ($row = mysqli_fetch_array($run_produktet)) {
-                                        $totalfee = $row['totalfee'];
-                                    ?>
-                                <?php }?>
+                                    // while ($row = mysqli_fetch_array($run_produktet)) {
+                                    //     $totalfee = $row['totalfee'];
+                                    // ?>
+                                <?php //}?> -->
                                 <svg xmlns="http://www.w3.org/2000/svg" width="10" height="1" viewBox="0 0 10 1">
                                     <line id="Line_4" data-name="Line 4" x2="9" transform="translate(0.5 0.5)"
                                         fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1"
                                         opacity="0.18" />
                                 </svg>
-                                <?php echo $totalfee?>
-                                <!-- €16,408.99 / 0.816 BTC --> / 0.816 BTC
+                                <?php//echo $totalfee?>
+                                <!--  / 0.816 BTC -->€16,408.99 / 0.816 BTC
                             </span>
                             <span>End Date - December 27</span>
                         </div>
 
 
-                        <div class="descChart ">
+                        <!-- <div class="descChart ">
                             <center><input type="hidden" name="dateTimer"><?php include('./timer.php'); ?></input>
                             </center>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <center> <div class="transactionNav">
-                        <a class="transactionBtn active">All Transactions</a>
+                        <a class="transactionBtn active">All Deposits</a>
                     </div></center>
                 <div class="transactionTable">
                     <div class="transactionTable">

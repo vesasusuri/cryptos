@@ -1,12 +1,9 @@
-<?php
-include('server_regjistrimi.php');
-?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <title>Register User's</title>
+    <title>All Users</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <meta content="" name="keywords">
     <meta content="" name="description">
@@ -53,21 +50,29 @@ include('server_regjistrimi.php');
                 </div>
                 <div class="navbar-nav w-100">
                     <a href="dashboard.php" class="nav-item nav-link "><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-                    <a href="Register.php" class="nav-item nav-link active"><i class="fa fa-th me-2"></i>Register Users</a>
-                    <a href="allUsers.php" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>All Users</a>
+                    <a href="Register.php" class="nav-item nav-link "><i class="fa fa-th me-2"></i>Register Users</a>
+                    <a href="allUsers.php" class="nav-item nav-link "><i class="fa fa-keyboard me-2"></i>All Users</a>
                     <a href="deposit.php" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Deposit</a>
                     <a href="totalFee.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Total Fee</a>
                     <a href="qrCode.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>QR Generator</a>
-                    <a href="withdrawRequest.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Withdraw</a>
+                    <a href="withdrawRequest.php" class="nav-item nav-link active"><i class="fa fa-chart-bar me-2"></i>Withdraw</a>
                 </div>
             </nav>
         </div>
+        <!-- Sidebar End -->
         <div class="content">
-            <!-- Navbar Start -->
             <nav class="navbar navbar-expand bg-secondary navbar-dark sticky-top px-4 py-0">
                 <a href="index.html" class="navbar-brand d-flex d-lg-none me-4">
                     <h2 class="text-primary mb-0"><i class="fa fa-user-edit"></i></h2>
                 </a>
+                <!-- <a href="#" class="sidebar-toggler flex-shrink-0">
+                    <i class="fa fa-bars"></i>
+                </a> -->
+                <form class="d-none d-md-flex ms-6" action="searchUsers.php" method="get" enctype="multi/form-data">
+                    <!-- <input class="form-control bg-dark border-0" type="search" placeholder="Search"> -->
+                    <input type="search" name="value" id="default-search" style="width:400%;border-radius:13px" placeholder="Search..." required>
+                    <button type="submit" name="search" style="width:200px;height:40px; position:relative;left:30px;background-color:orangered;color:white; border-radius:13px">Search</button>
+                </form>
                 <div class="navbar-nav align-items-center ms-auto">
                 
                     <div class="nav-item dropdown">
@@ -82,50 +87,72 @@ include('server_regjistrimi.php');
                 </div>
             </nav>
             <br><br>
-            <div class="col-sm-12 col-xl-6" style="margin-left:300px;">
-                <div class="bg-secondary rounded h-100 p-4">
-                     <h6 class="mb-4">Register Users</h6>
-                        <form method="POST" action="Register.php">
-                           <?php include('errors_regjistrimi.php'); ?>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Name" name="emri">
-                                <label for="floatingInput">Name:</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Surname" name="mbiemri">
-                                <label for="floatingInput">Surname:</label>
-                            </div>
+            
+            <div class="col-sm-12 col-xl-6" style="margin-left:25px; width:96%;">
+                 <div class="bg-secondary rounded h-100 p-4">
+                    <h6 class="mb-4">All Withdraw Requests</h6>
+                    <table class="table table-hover">
+                        <thead>
+                         <tr>
+                            <th scope="col">id</th>
+                            <th scope="col">Bitcoin Wallet</th>
+                            <th scope="col">Btc Address</th>
+                            <th scope="col">Amount</th>
+                            <th scope="col">Username</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Edit</th>
+                          </tr>
+                        </thead>
+                        <?php
+                            $con = mysqli_connect("localhost", "root", "", "crypto");
+                mysqli_select_db($con, "crypto");
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Username" name="username">
-                                <label for="floatingInput">Username:</label>
-                            </div>
+                $select_produktet = "select * from withdraw";
 
-                            <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
-                                    placeholder="name@example.com" name="email">
-                                <label for="floatingInput">Email address</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
-                                    placeholder="Password" name="password">
-                                <label for="floatingPassword">Password</label>
-                            </div>
+                $run_produktet = mysqli_query($con, $select_produktet);
 
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingPassword"
-                                    placeholder="Hash Code" name="hash">
-                                <label for="floatingPassword">Hash Code</label>
-                            </div>
+                while ($row = mysqli_fetch_array($run_produktet)) {
 
-                            <button type="submit" class="btn btn-primary py-3 w-100 mb-4"  name="login" value="Log In">Sign In</button>
-                          </form>
+                    $id = $row['id'];
+                    $bwallet = $row['bwallet'];
+                    $btcAddress = $row['btcAddress'];
+                    $amount = $row['amount'];
+                    $username = $row['username'];
+                    $status = $row['status'];
+
+                ?>
+                        <tbody>
+                            <tr>
+                            <th scope="row">
+                              <?php echo $id; ?>
+                            </th>
+                            <th scope="row">
+                            <?php echo $bwallet; ?>
+                            </th>
+                            <th scope="row">
+                            <?php echo $btcAddress; ?>
+                            </th>
+                            <th scope="row">
+                            <?php echo $amount; ?>
+                            </th>
+                            <th scope="row">
+                            <?php echo $username; ?>
+                            </th>
+                            <th scope="row">
+                            <?php echo $status; ?>
+                            </th>
+                            <th scope="row">
+                             <a href="edit_withdraw.php?edit=<?php echo $id; ?>" class=" flex justify-center items-center text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Edit</a>
+                            </th>
+                                </tbody>
+                                <?php } ?>
+                            </table>
+                            
                         </div>
+                       
                     </div>
-
+                   
+            <!-- Footer Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="bg-secondary rounded-top p-4">
                     <div class="row">
@@ -133,12 +160,17 @@ include('server_regjistrimi.php');
                             &copy; <a href="#">Cryptos</a>, All Right Reserved. 
                         </div>
                         <div class="col-12 col-sm-6 text-center text-sm-end">
-                            Designed By <a href="#">Vesa Susuri</a>
+                            Designed By <a href="">Vesa Susuri</a>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Footer End -->
         </div>
+        <!-- Content End -->
+
+
+        <!-- Back to Top -->
         <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
     </div>
 

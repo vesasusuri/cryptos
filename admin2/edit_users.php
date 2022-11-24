@@ -15,7 +15,7 @@ if(isset($_GET['edit'])){
 <html>
 
 <head>
-    <title>Faqja per Admin</title>
+    <title>Edit Users</title>
     <link rel="stylesheet" href="../styles.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="img/favicon.ico" rel="icon">
@@ -66,6 +66,7 @@ if(isset($_GET['edit'])){
                     <a href="deposit.php" class="nav-item nav-link "><i class="fa fa-table me-2"></i>Deposit</a>
                     <a href="totalFee.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Total Fee</a>
                     <a href="qrCode.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>QR Generator</a>
+                    <a href="withdrawRequest.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Withdraw</a>
                 </div>
             </nav>
         </div>

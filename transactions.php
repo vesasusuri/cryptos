@@ -100,7 +100,7 @@ if (!isset($_SESSION['username'])) {
                     </g>
                 </svg>
                 <div class="labelItemMenu">
-                    <span>Transactions</span>
+                    <span>Withdraw Requests</span>
                 </div>
             </a>
             <a href="./logoutUser.php" class="menuItem" page="login">
@@ -147,14 +147,14 @@ if (!isset($_SESSION['username'])) {
 
             <div class="pageInside">
                 <div class="pageHeader">
-                    <span>Transactions</span>
+                    <span>Withdraw Requests</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="257" height="1" viewBox="0 0 257 1">
                         <line id="Line_14" data-name="Line 14" x2="256" transform="translate(0.5 0.5)" fill="none"
                             stroke="#fff" stroke-linecap="round" stroke-width="1" opacity="0.18" />
                     </svg>
                 </div>
                 <div class="transactionNav">
-                            <a class="transactionBtn active">All Transactions</a>
+                            <a class="transactionBtn active">All Withdraw Requests</a>
                         </div>
 
                 <div class="pageContentBg">
@@ -163,10 +163,10 @@ if (!isset($_SESSION['username'])) {
                         <div class="transactionHeaderTable">
                             <div class="rowTransaction">
                                 <span>#</span>
-                                <span>amount</span>
-                                <span>btcWallet</span>
+                                <span>My Bitcoin Wallet</span>
+                                <span>Btc Address</span>
+                                <span>Amount</span>
                                 <span>username</span>
-                                <span>date</span>
                                 <span>status</span>
                             </div>
                         </div>
@@ -179,29 +179,25 @@ if (!isset($_SESSION['username'])) {
                  $con = mysqli_connect("localhost", "root", "", "crypto");
                  mysqli_select_db($con, "crypto");
 
-                 $select_produktet = "SELECT * FROM deposit WHERE  username = '".$_SESSION['username']."'"; 
+                 $select_produktet = "SELECT * FROM withdraw WHERE  username = '".$_SESSION['username']."'"; 
 
                  $run_produktet = mysqli_query($con, $select_produktet);
 
                  while ($row = mysqli_fetch_array($run_produktet)) {
-
-                     $id = $row['id'];
-                     $amount = $row['amount'];
-                     $btcWallet = $row['btcWallet'];
-                     $username = $row['username'];
-                     $date = $row['date'];
-                     $status = $row['status'];
-
+                    $id = $row['id'];
+                    $bwallet = $row['bwallet'];
+                    $btcAddress = $row['btcAddress'];
+                    $amount = $row['amount'];
+                    $username = $row['username'];
+                    $status = $row['status'];
                  ?>
 
                                 <span><?php echo $id; ?></span>
-                                <span> <?php echo $amount; ?></span>
-                                <span><?php echo $btcWallet; ?></span>
+                                <span><?php echo $bwallet; ?></span>
+                                <span><?php echo $btcAddress; ?></span>
+                                <span><?php echo $amount; ?></span>
                                 <span><?php echo $username; ?></span>
-                                <span><?php echo $date; ?></span>
-                                <span>
-                                    <?php echo $status; ?>
-                                </span>
+                                <span><?php echo $status; ?></span>
                                 <?php } ?>
                             </div>
 

@@ -56,6 +56,7 @@ include('edit_deposit_id.php');
                     <a href="deposit.php" class="nav-item nav-link active"><i class="fa fa-table me-2"></i>Deposit</a>
                     <a href="totalFee.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Total Fee</a>
                     <a href="qrCode.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>QR Generator</a>
+                    <a href="withdrawRequest.php" class="nav-item nav-link"><i class="fa fa-chart-bar me-2"></i>Withdraw</a>
                 </div>
             </nav>
         </div>

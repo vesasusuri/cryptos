@@ -118,7 +118,7 @@ if (!isset($_SESSION['username'])) {
                     </g>
                 </svg>
                 <div class="labelItemMenu">
-                    <span>Transactions</span>
+                    <span>Withdraw Requests</span>
                 </div>
             </a>
             <a href="./logoutUser.php" class="menuItem" page="login">
@@ -171,7 +171,7 @@ if (!isset($_SESSION['username'])) {
                         <input type="text" placeholder="From My Bitcoin Wallet" name="bwallet" >
                     </div>
                     <div class="inputRow">
-                        <input type="text" placeholder="To BTC address" name="btcAddres">
+                        <input type="text" placeholder="To BTC address" name="btcAddress">
                     </div>
                     <div class="inputRow">
                         <input type="text" placeholder="Amount" name="amount">
