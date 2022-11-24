@@ -1,5 +1,5 @@
 const date = () => {
-  let date_main = new Date("Nov, 29 ,2022, 10:50:58");
+  let date_main = new Date("Nov, 30 ,2022, 10:50:58");
 
   let current_date = new Date();
 

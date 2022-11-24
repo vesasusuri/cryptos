@@ -16,33 +16,33 @@ if (!isset($_SESSION['username'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Transactions</title>
-    <link rel="stylesheet" href="css/style.css?v=1" />
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <style>
-    .img-logo {
-        margin-top: -80px;
-        margin-left: 35%;
+     .img-logo {
+        margin-top: -10px;
+        margin-left: 43%;
         width: 200px;
     }
     </style>
 </head>
 
 <body>
-    <div class="backgroundImage">
+    <!-- <div class="backgroundImage">
         <img src="img/backgroundpng.png" alt="">
     </div>
-    <div class="main">
+    <div class="main"> -->
         <div class="mainMenu">
             <div class="labelItemMenu">
-                <svg xmlns="http://www.w3.org/2000/svg" width="43.659" height="56.424" style="margin-left:230px"
+                <svg xmlns="http://www.w3.org/2000/svg" width="43.659" height="56.424" style="margin-left:700px"
                     viewBox="0 0 43.659 56.424">
                     <path id="Path_3239" data-name="Path 3239"
                         d="M51.485,46.99c-.019-.129-.037-.255-.06-.389A15.048,15.048,0,0,0,58.46,35.8c.006-.045.011-.089.017-.134q.049-.392.078-.791c0-.056.009-.111.013-.167.018-.3.03-.608.03-.915v-.02c0-3.379,0-8.008-1.7-12.058-1.573-3.743-5.155-8.2-13.28-8.214h-.027c-8.146,0-11.733,4.467-13.308,8.215-1.7,4.05-1.7,8.678-1.7,12.058v.02c0,.308.012.612.03.915,0,.056.009.111.013.167q.029.4.078.791c.006.045.011.089.017.134a15.048,15.048,0,0,0,7.035,10.8c-.023.135-.04.261-.06.389a25.7,25.7,0,0,0-11.913,7.032A7.515,7.515,0,0,0,25.3,65.53c4.722,2.916,10.873,4.4,18.283,4.4s13.562-1.479,18.283-4.4A7.515,7.515,0,0,0,63.4,54.022,25.7,25.7,0,0,0,51.485,46.99Zm8.434,15.38c-3.847,2.377-9.115,3.841-16.331,3.841S31.1,64.747,27.256,62.37a3.8,3.8,0,0,1-.766-5.811,21.717,21.717,0,0,1,9.175-5.686,4.645,4.645,0,0,0,.635,1.616c1.64,2.669,5.643,2.957,7.288,2.957s5.648-.288,7.288-2.957a4.645,4.645,0,0,0,.635-1.616,21.717,21.717,0,0,1,9.175,5.686,3.8,3.8,0,0,1-.766,5.811ZM32.292,33.794c0-6.246,0-16.579,11.3-16.579s11.3,10.333,11.3,16.579a11.3,11.3,0,1,1-22.592,0ZM47.711,50.545a2.281,2.281,0,0,1-1.269.777,10.146,10.146,0,0,1-5.71,0,2.281,2.281,0,0,1-1.269-.777,4.265,4.265,0,0,1-.174-2.359,14.957,14.957,0,0,0,8.6,0,4.265,4.265,0,0,1-.174,2.359Z"
                         transform="translate(-21.758 -13.501)" fill="#e4e4e4" />
                 </svg>
-                <span><?php echo $_SESSION['username']; ?></span>
+                <span style="color:white;"><?php echo $_SESSION['username']; ?></span>
                 <span></span>
             </div>
 
@@ -139,8 +139,8 @@ if (!isset($_SESSION['username'])) {
                         </g>
                     </svg>
                 </a>
-                <a href="./section2.php" class="headerLogo">
-                    <img src="./img/logo2.png" alt="" class="img-logo">
+                <a href="./bic coins.php" class="headerLogo">
+                    <img src="./img/loho22.png" alt="" class="img-logo">
 
                 </a>
             </div>
@@ -153,12 +153,12 @@ if (!isset($_SESSION['username'])) {
                             stroke="#fff" stroke-linecap="round" stroke-width="1" opacity="0.18" />
                     </svg>
                 </div>
-                <div class="pageContentBg">
-                    <div class="transactionTable">
-                        <div class="transactionNav">
+                <div class="transactionNav">
                             <a class="transactionBtn active">All Transactions</a>
                         </div>
 
+                <div class="pageContentBg">
+                    <div class="transactionTable">
 
                         <div class="transactionHeaderTable">
                             <div class="rowTransaction">
@@ -170,9 +170,9 @@ if (!isset($_SESSION['username'])) {
                                 <span>status</span>
                             </div>
                         </div>
-                        <div class="rowTransaction">
+                        <div class="rowTransaction2">
 
-                            <div class="rowTransaction">
+                            <div class="rowTransaction2">
                                 <?php
                          $username = $_SESSION['username'];
                          

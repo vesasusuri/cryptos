@@ -1,6 +1,4 @@
-
 <?php 
-
   $name = $_SESSION['username'];
   $amount1 = '';
   $btcWallet1 = '';
@@ -30,17 +28,15 @@
     }
      if (count($errors) == 0) 
      {
-        
         $regist ="INSERT INTO deposit (amount,btcWallet,username)
         VALUES ('$amount1','$btcWallet1','$name')";
-
         $rows = "SELECT * FROM deposit WHERE amount='$amount1' AND btcWallet='$btcWallet1'";	
 	    $run = mysqli_query($conn, $rows);
 
         if(mysqli_num_rows($run)<100){
             mysqli_query($conn,$regist);
             echo '<script>alert("Deposit is sent successfully")</script>';
-            echo "window.open('deposit.php')";  
+            echo "<script>window.open('deposit.php')</script>";  
        }
      }
   }

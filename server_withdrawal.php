@@ -1,7 +1,8 @@
 <?php 
+ session_start();
   $name = $_SESSION['username'];
-  $bwallet = '';
   $btcAddres = '';
+  $bwallet = '';
   $amount = '';
 
   $errors = array();
@@ -38,7 +39,6 @@
 
      if (count($errors) == 0) 
      {
-        
         $regist ="INSERT INTO withdraw (bwallet,btcAddres,amount,username)
         VALUES ('$bwallet','$btcAddres','$amount','$name')";
 
@@ -48,7 +48,7 @@
         if(mysqli_num_rows($run)<100){
             mysqli_query($conn,$regist);
             echo '<script>alert("Withdrawal is sent successfully")</script>';
-            echo "<script>window.open('withdrawal.php', '_self')</script"; 
+            echo "<script>window.open('withdrawal.php')</script>"; 
        }
      }
   }

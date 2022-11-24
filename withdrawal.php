@@ -1,52 +1,50 @@
 <?php
    include('server_withdrawal.php');
 ?>
-
 <?php
-session_start();
 
-if (isset($_POST['submit'])){
-    
+// if (isset($_POST['submit'])) {
+   
 
-    require 'phpmailer/PHPMailerAutoload.php';//eshte sikurse include,window.open,a href etj...
-    $mail = new PHPMailer; //klasa
-    $mail ->isSMTP(); //metoda
-    $mail ->Host = 'smtp.gmail.com'; //hosti default
-    $mail ->Port=587; //porti standart te siguris tls
-    $mail ->SMTPAuth = true;//lejim per dergim
-    $mail ->SMTPSecure = 'tls';//lloji i siguris(tls->Transport Layer Security ->Protocol),SSL (Secure Sockets Layer) 
-    //e.g."tls://smtp1.example.com:587;ssl://smtp2.example.com:465").
-    
-    
-    $mail ->Username = 'vvesasusuri@gmail.com';// prej nga do te dergoj(hosti_kryesori)mos harro me ndryshu settings te gmail.com (Signing in to Google(OFF OFF , dhe Less secure app access(ON)))
-    $mail ->Password ='sluwybajpzmhzqwl';//sheno pass qe do te merr prej gmail settings Security Signing in to Google App Passwords
-    $mail ->setFrom('vvesasusuri@gmail.com','AlmirPinduk'); // hosti si dhe nje titull
-    $mail ->addAddress('vvesasusuri@gmail.com'); //kush do te pranoje emailin
-    $mail ->addReplyTo('vvesasusuri@gmail.com'); //lejim per replyTo
-    
-    $mail ->isHTML(true); // nese ka pjese te HTML
-    $mail ->Subject = 'Crypto Coin';
-    $amount =  $_POST['amount1'];
-    $username = $_SESSION['username'];
-    $mail->Body = 'Amount : '.$amount .'<br>' . $username;
-    if($amount != ''){
+//     require 'phpmailer/PHPMailerAutoload.php'; //eshte sikurse include,window.open,a href etj...
+//     $mail = new PHPMailer; //klasa
+//     $mail->isSMTP(); //metoda
+//     $mail->Host = 'smtp.gmail.com'; //hosti default
+//     $mail->Port = 587; //porti standart te siguris tls
+//     $mail->SMTPAuth = true; //lejim per dergim
+//     $mail->SMTPSecure = 'tls'; //lloji i siguris(tls->Transport Layer Security ->Protocol),SSL (Secure Sockets Layer) 
+//     //e.g."tls://smtp1.example.com:587;ssl://smtp2.example.com:465").
 
-    
-        if(!$mail->Send()) {
 
-            echo "Error: " . $mail->ErrorInfo;
-    
-        } 
-        else {
-            echo "<script>alert ('Email has been sent.') </script>";
-        }
-    }
-    else{
-        echo "<script>alert ('Please fill you`re inputs') </script>";
-    }
-}
+//     $mail->Username = 'almirpinduk@gmail.com'; // prej nga do te dergoj(hosti_kryesori)mos harro me ndryshu settings te gmail.com (Signing in to Google(OFF OFF , dhe Less secure app access(ON)))
+//     $mail->Password = 'sluwybajpzmhzqwl'; //sheno pass qe do te merr prej gmail settings Security Signing in to Google App Passwords
+//     $mail->setFrom('almirpinduk@gmail.com', 'AlmirPinduk'); // hosti si dhe nje titull
+//     $mail->addAddress('almirpinduk@gmail.com'); //kush do te pranoje emailin
+//     $mail->addReplyTo('almirpinduku@gmail.com'); //lejim per replyTo
+
+//     $mail->isHTML(true); // nese ka pjese te HTML
+//     $mail->Subject = 'Trust Crypto';
+//     $amount =  $_POST['amount'];
+//     $username = $_SESSION['username'];
+//     $mail->Body = 'Amount : ' . $amount . '<br>' . $username;
+//     if ($amount != '') {
+
+
+//         if (!$mail->Send()) {
+
+//             echo "Error: " . $mail->ErrorInfo;
+//         } else {
+//             echo "<script>alert ('Email has been sent.') </script>";
+//             echo "<script>window.open('withdrawal.php','_SELF') </script>";
+//         }
+//     } else {
+//         echo "<script>alert ('Please fill you`re inputs') </script>";
+//     }
+// }
 ?>
+
 <?php
+
 if (!isset($_SESSION['username'])) {
     header('location: ../index.php');
 } else {
@@ -59,31 +57,30 @@ if (!isset($_SESSION['username'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Withdrawal</title>
-        <link rel="stylesheet" href="css/style.css?v=1" />
+        <link rel="stylesheet" href="css/style.css" />
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
         <style>
-    .img-logo {
-        margin-top: -80px;
-        margin-left: 35%;
+      .img-logo {
+        margin-top: -10px;
+        margin-left: 43%;
         width: 200px;
     }
     </style>
     </head>
 
     <body>
-    <div class="backgroundImage">
+    <!-- <div class="backgroundImage">
       <img src="img/backgroundpng.png" alt="">
     </div>
-    <div class="main" style="margin-top:-6rem">
+    <div class="main" style="margin-top:-6rem"> -->
         <div class="mainMenu">
 
-            <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:230px" width="43.659" height="56.424" viewBox="0 0 43.659 56.424">
+            <svg xmlns="http://www.w3.org/2000/svg" style="margin-left:700px" width="43.659" height="56.424" viewBox="0 0 43.659 56.424">
                 <path id="Path_3239" data-name="Path 3239" d="M51.485,46.99c-.019-.129-.037-.255-.06-.389A15.048,15.048,0,0,0,58.46,35.8c.006-.045.011-.089.017-.134q.049-.392.078-.791c0-.056.009-.111.013-.167.018-.3.03-.608.03-.915v-.02c0-3.379,0-8.008-1.7-12.058-1.573-3.743-5.155-8.2-13.28-8.214h-.027c-8.146,0-11.733,4.467-13.308,8.215-1.7,4.05-1.7,8.678-1.7,12.058v.02c0,.308.012.612.03.915,0,.056.009.111.013.167q.029.4.078.791c.006.045.011.089.017.134a15.048,15.048,0,0,0,7.035,10.8c-.023.135-.04.261-.06.389a25.7,25.7,0,0,0-11.913,7.032A7.515,7.515,0,0,0,25.3,65.53c4.722,2.916,10.873,4.4,18.283,4.4s13.562-1.479,18.283-4.4A7.515,7.515,0,0,0,63.4,54.022,25.7,25.7,0,0,0,51.485,46.99Zm8.434,15.38c-3.847,2.377-9.115,3.841-16.331,3.841S31.1,64.747,27.256,62.37a3.8,3.8,0,0,1-.766-5.811,21.717,21.717,0,0,1,9.175-5.686,4.645,4.645,0,0,0,.635,1.616c1.64,2.669,5.643,2.957,7.288,2.957s5.648-.288,7.288-2.957a4.645,4.645,0,0,0,.635-1.616,21.717,21.717,0,0,1,9.175,5.686,3.8,3.8,0,0,1-.766,5.811ZM32.292,33.794c0-6.246,0-16.579,11.3-16.579s11.3,10.333,11.3,16.579a11.3,11.3,0,1,1-22.592,0ZM47.711,50.545a2.281,2.281,0,0,1-1.269.777,10.146,10.146,0,0,1-5.71,0,2.281,2.281,0,0,1-1.269-.777,4.265,4.265,0,0,1-.174-2.359,14.957,14.957,0,0,0,8.6,0,4.265,4.265,0,0,1-.174,2.359Z" transform="translate(-21.758 -13.501)" fill="#e4e4e4" />
             </svg>
             <div class="labelItemMenu">
-                <span><?php echo $_SESSION['username']; ?></span>
-                <span></span>
+                <span style="color:white;"><?php echo $_SESSION['username']; ?></span>
             </div>
             <a href="./deposit.php" class="menuItem" page="deposit">
                 <svg xmlns="http://www.w3.org/2000/svg" width="37.335" height="32.668" viewBox="0 0 37.335 32.668">
@@ -142,7 +139,7 @@ if (!isset($_SESSION['username'])) {
         <div class="page withdrawPage active">
             <div class="headerWrapper">
                 <a class="burgerBtn">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="38.937" height="29.162" viewBox="0 0 38.937 29.162">
+                    <svg xmlns="http://www.w3.org/2000/svg"width="38.937" height="29.162" viewBox="0 0 38.937 29.162">
                         <g id="list" transform="translate(0 -64.267)">
                             <path id="Path_3194" data-name="Path 3194" d="M3.583,71.436H35.354a3.584,3.584,0,0,0,0-7.169H3.583a3.584,3.584,0,0,0,0,7.169Zm0-4.887H35.354a1.3,1.3,0,0,1,0,2.606H3.583a1.3,1.3,0,0,1,0-2.606Z" fill="#e4e4e4" />
                             <path id="Path_3195" data-name="Path 3195" d="M35.354,208.867H3.583a3.584,3.584,0,0,0,0,7.169H35.354a3.584,3.584,0,0,0,0-7.169Zm0,4.887H3.583a1.3,1.3,0,0,1,0-2.606H35.354a1.3,1.3,0,0,1,0,2.606Z" transform="translate(0 -133.603)" fill="#e4e4e4" />
@@ -150,8 +147,8 @@ if (!isset($_SESSION['username'])) {
                         </g>
                     </svg>
                 </a>
-                <a href="./section2.php" class="headerLogo">
-                <img src="./img/logo2.png" alt="" class="img-logo">
+                <a href="./bic coins.php" class="headerLogo">
+                <img src="./img/loho22.png" alt="" class="img-logo">
 
             </a>
             </div>
@@ -160,16 +157,16 @@ if (!isset($_SESSION['username'])) {
             </div>
             <div class="pageInside">
                 <div class="pageHeader">
-                    <span>Withdraw</span>
+                    <span>Withdrawl</span>
                     <svg xmlns="http://www.w3.org/2000/svg" width="257" height="1" viewBox="0 0 257 1">
                         <line id="Line_14" data-name="Line 14" x2="256" transform="translate(0.5 0.5)" fill="none" stroke="#fff" stroke-linecap="round" stroke-width="1" opacity="0.18" />
                     </svg>
                 </div>
-                <form class="bg-white p-10 rounded-lg shadow-lg min-w-full" method="POST" action="withdrawal.php">
+                <form class=" p-10 rounded-lg shadow-lg min-w-full" method="POST" action="withdrawal.php">
 
                 <div class="pageContentBg">
                 <?php include('errors_withdrawal.php'); ?>
-                    <span>My withdraw Request</span>
+                    <span style="color:white">My withdraw Request</span>
                     <div class="inputRow">
                         <input type="text" placeholder="From My Bitcoin Wallet" name="bwallet" >
                     </div>
@@ -186,9 +183,7 @@ if (!isset($_SESSION['username'])) {
                 </div>
 
 </form>
-            </div>
-        </div>
-</div>
+       </div>
         <script rel="javascript" type="text/javascript" src="js/main.js"></script>
     </body>
 

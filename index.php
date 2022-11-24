@@ -34,6 +34,7 @@
              Buy and sell cryptocurrencies with 20+ fiat currencies using bank transfers or your credit/debit card.
           </p>
           <button>Log In</button>
+          <a href="signup.php"><button>Sign Up</button></a>
         </div>
         <div class="img_data">
           <img src="img/Crypto Earth 1.png" alt="" />
